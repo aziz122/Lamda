@@ -1,5 +1,7 @@
 package fr.codeonce.lamda;
 
+import java.util.function.BiPredicate;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.*;
@@ -19,19 +21,62 @@ public class LamdaApplication {
         strings.add("W12345678901"); //false
         strings.add("Z1234567890"); // false
 
+        IsvalidInterface predection= () -> str->str.length()==11 && str.startsWith("W");
+        
+      
       
         strings.stream()
-        .filter(LamdaApplication::isValid)
+        .filter(predection.isValid())
         .forEach(System.out::println);
         		  
                 
 
-       // System.out.println(filteredStrings);
+      
+		
+
+		//BiPredicate<String, String> bipres=(x,y)->x>y;
+		/*List<String> strings = new ArrayList<>();
+        strings.add("d"); // true
+        strings.add("c"); // false
+        strings.add("a"); //false
+        strings.add("b"); // false*/
+        Object b = "ccc";
+        Object a="aaa";
+        
+      Optional.ofNullable(a).ifPresentOrElse(x->{ 
+    	  x=b;
+    	System.out.println(x);  
+      }
+    		  
+    		  ,
+    		  
+    		  ()-> { throw new  NoSuchElementException();}
+    		  
+    		  );
+      
+     // System.out.println(c);
+        
+       /* Function<Long, Long> facto=x-> {
+        	
+        	long result=1;
+        	
+        	for(long i=0;i<=x;i++) {
+        		result=result*i;
+        	}
+			return result;
+        	
+        };
+        long n=3;
+        long res=facto.apply(n);
+        
+        System.out.println(res);*/
+
+       //DoubleSummaryStatistics d=numbers.stream().mapToDouble(x->(Double)x).summaryStatistics();
+    // numbers.stream().distinct().forEach(System.out::println);
+       // strings.stream().sorted().forEach(System.out::println);
+		 
 	}
 	
-	  public static boolean isValid(String str) {
-		  Predicate<String> isValidPred= s-> s.length()==11 && s.startsWith("W");
-		  return isValidPred.test(str);
-	  }
+	  
 
 }

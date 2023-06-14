@@ -1,12 +1,14 @@
 package fr.codeonce.lamda;
 
+import java.util.List;
+
 public class Client {
 	String name;
-	compte Compte;
-	public Client(String name, compte compte) {
+	List<Compte> comptes;
+	public Client(String name, List<Compte> comptes) {
 		super();
 		this.name = name;
-		Compte = compte;
+		this.comptes = comptes;
 	}
 	public String getName() {
 		return name;
@@ -14,12 +16,13 @@ public class Client {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public compte getCompte() {
-		return Compte;
+	public List<Compte> getComptes() {
+		return comptes;
 	}
-	public void setCompte(compte compte) {
-		Compte = compte;
+	public void setComptes(List<Compte> comptes) {
+		this.comptes = comptes;
 	}
+	
 	
 	
 

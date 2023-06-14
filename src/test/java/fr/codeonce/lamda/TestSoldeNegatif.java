@@ -8,23 +8,22 @@ import org.junit.jupiter.api.Test;
 public class TestSoldeNegatif {
 	@Test
 	public void testSolde() {
-		compte c1=new compte(1,12);
-		compte c2=new compte (2,13);
-		compte c3=new compte(3, -12);
+		Compte c1=new Compte(1,12);
+		Compte c2=new Compte (2,13);
+		Compte c3=new Compte(3, -12);
 		clientexemple c=new clientexemple();
-		List<compte> lc=new ArrayList<>();
+		List<Compte> lc=new ArrayList<>();
 		lc.add(c1);
 		lc.add(c2);
 		lc.add(c3);
 		List<Client> lclient=new ArrayList<>();
-		Client cc1=new Client("aziz",c1);
-		Client cc2=new Client("brahim",c2);
-		Client cc3=new Client("ayoub",c3);
+		Client cc1=new Client("aziz",lc);
+		Client cc2=new Client("brahim",lc);
+		
 		lclient.add(cc1);
 		lclient.add(cc2);
-		lclient.add(cc3);
 		long testsize=c.soldenegatif(lclient);
-		assertEquals(2,testsize);
+		assertEquals(4,testsize);
 	}
 
 }

@@ -1,7 +1,9 @@
 package fr.codeonce.lamda;
 
+import java.util.function.Predicate;
+
 @FunctionalInterface
 public interface IsvalidInterface {
 
-	public Boolean isValid();
+	public Predicate<String> isValid();
 }

@@ -1,10 +1,10 @@
 package fr.codeonce.lamda;
 
-public class compte {
+public class Compte {
 
 	int id;
 	int solde;
-	public compte(int id, int solde) {
+	public Compte(int id, int solde) {
 		super();
 		this.id = id;
 		this.solde = solde;
